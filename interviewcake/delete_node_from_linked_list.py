@@ -41,7 +41,6 @@ def delete_node(node):
         node.value = None
 
 
-
 def traverse(head):
     n = head
     print(n.value)
