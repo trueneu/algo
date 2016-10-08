@@ -17,5 +17,11 @@ for delivery_id in delivery_id_confirmations:
     else:
         d.add(delivery_id)
 
+r = 0
+for delivery_id in delivery_id_confirmations:
+    r ^= delivery_id
+
 for x in d:
     print(x)
+
+print(r)
