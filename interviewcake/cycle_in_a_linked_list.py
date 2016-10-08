@@ -8,10 +8,10 @@ b = LinkedListNode('B')
 c = LinkedListNode('C')
 d = LinkedListNode('D')
 
-a.next = a
+a.next = b
 b.next = c
 c.next = d
-# d.next = b
+d.next = None
 
 
 def contains_cycle(head):
@@ -24,4 +24,19 @@ def contains_cycle(head):
         n = n.next
     return False
 
-print(contains_cycle(a))
+
+def contains_cycle2(head):
+    n1 = n2 = head
+    c = 0
+    while n1:
+        c += 1
+        if c == 2:
+            c = 0
+            n2 = n2.next
+        n1 = n1.next
+        if n1 is n2:
+            return True
+    return False
+
+
+print(contains_cycle2(a))
